@@ -13,4 +13,4 @@ V1.1:
     
 v1.0:
     
-    cycle_printing.txt: print digits to 7-segment display dynamic indication and library functions    
+    cycle_printing.txt: print digits to 7-segment display using dynamic indication and library functions    
