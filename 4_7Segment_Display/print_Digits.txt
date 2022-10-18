@@ -1,0 +1,262 @@
+byte pins = 0xFF;
+int pinA = 0;
+int pinB = 1;
+int pinC = 2;
+int pinD = 3;
+int pinE = 4;
+int pinF = 5;
+int pinG = 6;
+
+void clear_Display();
+void position_Of_Digit(int pos);
+void printDigit(int digit);
+void printNumbers(int number,int time);
+
+void setup() {   
+  pinMode(pins, OUTPUT);        
+  pinMode(pinA, OUTPUT);     
+  pinMode(pinB, OUTPUT);     
+  pinMode(pinC, OUTPUT);     
+  pinMode(pinD, OUTPUT);     
+  pinMode(pinE, OUTPUT);     
+  pinMode(pinF, OUTPUT);     
+  pinMode(pinG, OUTPUT);   
+}
+
+void loop() 
+{
+  printNumbers(1,1000);
+  printNumbers(23,1000);
+  printNumbers(456,1000);
+  printNumbers(7890,1000);
+
+
+/*
+  position_Of_Digit(1);
+  printDigit(0);
+  delay(1000);
+  
+  printDigit(1);
+  delay(1000);
+  
+  printDigit(2);
+  delay(1000);
+ 
+  printDigit(3);
+  delay(1000);
+ 
+  printDigit(4);
+  delay(1000);
+  
+  printDigit(5);
+  delay(1000);
+  
+  printDigit(6);
+  delay(1000);
+ 
+  printDigit(7);
+  delay(1000);
+ 
+  printDigit(8);
+  delay(1000);
+
+  printDigit(9);
+  delay(1000);
+ */
+}
+
+void clear_Display()
+{
+  digitalWrite(pinA,LOW);
+  digitalWrite(pinB,LOW);
+  digitalWrite(pinC,LOW);
+  digitalWrite(pinD,LOW);
+  digitalWrite(pinE,LOW);
+  digitalWrite(pinF,LOW);
+  digitalWrite(pinG,LOW);
+
+  digitalWrite(9,LOW);
+  digitalWrite(10,LOW);
+  digitalWrite(11,LOW);
+  digitalWrite(12,LOW);
+
+}
+
+void position_Of_Digit(int pos)
+{
+  for(int i = 9; i < 13; i++)
+  digitalWrite(i,LOW);
+  switch(pos)
+  {
+    case 1:
+      {
+        digitalWrite(9,HIGH);
+      }
+      break;
+
+    case 2:
+      {
+        digitalWrite(10,HIGH);
+      }
+      break;
+
+    case 3:
+      {
+        digitalWrite(11,HIGH);
+      }
+      break;
+
+    case 4:
+      {
+        digitalWrite(12,HIGH);
+      }
+      break;
+    
+    default:
+      {
+        digitalWrite(9,HIGH);
+      }
+  }
+}
+
+
+void printDigit(int digit)
+{
+ for(int i = 0; i < 7;i++)
+  digitalWrite(i,HIGH);
+    switch(digit)
+    {
+      case 0:
+        {
+         digitalWrite(pinG,LOW);
+        }
+        break;
+      case 1:
+        {
+          digitalWrite(pinA,LOW);
+          digitalWrite(pinD,LOW);
+          digitalWrite(pinE,LOW);
+          digitalWrite(pinF,LOW);
+          digitalWrite(pinG,LOW);
+        }
+        break;
+      case 2:
+        {
+          digitalWrite(pinC,LOW);
+          digitalWrite(pinF,LOW);
+        }
+        break;
+      case 3:
+        {
+          digitalWrite(pinE,LOW);
+          digitalWrite(pinF,LOW);
+        }
+        break;
+      case 4:
+        {
+          digitalWrite(pinA,LOW);
+          digitalWrite(pinD,LOW);
+          digitalWrite(pinE,LOW);
+        }   
+        break;
+      case 5:
+        {
+          digitalWrite(pinB,LOW);
+          digitalWrite(pinE,LOW);
+        }
+        break;
+      case 6:
+        {
+          digitalWrite(pinB,LOW);
+        }
+        break;
+       case 7:
+        {
+          digitalWrite(pinD,LOW);
+          digitalWrite(pinE,LOW);
+          digitalWrite(pinF,LOW);
+          digitalWrite(pinG,LOW);
+        }
+        break;
+      case 8:
+        {
+          
+        }
+        break;
+      case 9:
+        {
+          digitalWrite(pinE,LOW);
+        }
+        break;
+      default:
+        {
+          digitalWrite(pinG,LOW);
+        }
+    }
+
+}
+
+void printNumbers(int number,int time)
+{
+  int i = 0;
+    position_Of_Digit(1);
+    printDigit( number%10 );
+  if(number < 0)
+    {
+      position_Of_Digit(1);
+      printDigit(0);
+      delay(time);
+    }
+  else if(number < 10)
+    {
+      delay(time);
+    }
+  else if(number < 100)
+  {
+    for(i = 0; i < time/10; i++)
+      {
+        position_Of_Digit(1);
+        printDigit( number%10 );
+        delay(5);
+        position_Of_Digit(2);
+        printDigit( number/10 );
+        delay(5);
+      }
+  }
+
+  else if(number < 1000)
+  {
+     for(i = 0; i < time/15; i++)
+      {
+        position_Of_Digit(1);
+        printDigit( number%10 );
+        delay(5);
+        position_Of_Digit(2);
+        printDigit( (number%100)/10 );
+        delay(5);
+        position_Of_Digit(3);
+        printDigit( number/100 );
+        delay(5);
+      }
+  }
+
+  else if(number < 10000)
+  {
+    for(i = 0; i < time/20; i++)
+      {
+        position_Of_Digit(1);
+        printDigit( number%10 );
+        delay(5);
+        position_Of_Digit(2);
+        printDigit( (number%100)/10 );
+        delay(5);
+        position_Of_Digit(3);
+        printDigit( (number%1000)/100 );
+        delay(5);
+        position_Of_Digit(4);
+        printDigit( number/1000 );
+        delay(5);
+      }
+  }
+  clear_Display();
+}

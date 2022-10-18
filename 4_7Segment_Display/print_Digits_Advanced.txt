@@ -1,0 +1,47 @@
+uint8_t SEGM1 = 127;
+uint8_t SEGM2 = 63;
+uint8_t SEGM3 = 79;
+uint8_t SEGM4 = 6;
+
+void printBuffer();
+void setup() {                
+  DDRB = DDRB | 0xF;  
+  DDRD = 0xFF;
+  PORTD = 0x00;
+  PORTB &= 0x0;
+}
+
+void loop() 
+{
+  printBuffer();
+}
+
+void printBuffer()
+{
+  
+  PORTD = SEGM1;
+  delay(1);
+  PORTD = 0x00;
+  PORTB &= ~(0x01);
+  PORTB |= 0x02;
+
+  PORTD = SEGM2;
+  delay(1);
+  PORTD = 0x00;
+  PORTB &= ~(0x02);
+  PORTB |= 0x04;
+
+  PORTD = SEGM3;
+  delay(1);
+  PORTD = 0x00;
+  PORTB &= ~(0x04);
+  PORTB |= 0x08;
+
+  PORTD = SEGM4;
+  delay(1);
+  PORTD = 0x00;
+  PORTB &= ~(0x08);
+  PORTB |= 0x01;
+  //delay(3);
+  
+}

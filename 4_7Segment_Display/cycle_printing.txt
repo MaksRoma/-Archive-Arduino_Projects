@@ -1,0 +1,253 @@
+// Pin 2-8 is connected to the 7 segments of the display.
+
+int pinA = 0;
+int pinB = 1;
+int pinC = 2;
+int pinD = 3;
+int pinE = 4;
+int pinF = 5;
+int pinG = 6;
+int D1 = 9;
+int D2 = 10;
+int D3 = 11;
+int D4 = 12;
+
+void clear_Display();
+void position_Of_Digit(int pos);
+void printDigit(int digit);
+void printNumber_Decimal(int digit);
+void printNumer_Hexadecimal(int hex);
+
+void setup() {                
+  pinMode(pinA, OUTPUT);     
+  pinMode(pinB, OUTPUT);     
+  pinMode(pinC, OUTPUT);     
+  pinMode(pinD, OUTPUT);     
+  pinMode(pinE, OUTPUT);     
+  pinMode(pinF, OUTPUT);     
+  pinMode(pinG, OUTPUT);   
+  pinMode(D1, OUTPUT);  
+  pinMode(D2, OUTPUT);  
+  pinMode(D3, OUTPUT);  
+  pinMode(D4, OUTPUT);  
+
+  digitalWrite(pinA,HIGH);
+  digitalWrite(pinB,HIGH);
+  digitalWrite(pinC,HIGH);
+  digitalWrite(pinD,HIGH);
+  digitalWrite(pinE,HIGH);
+  digitalWrite(pinF,HIGH);
+
+  digitalWrite(9,LOW);
+  digitalWrite(10,LOW);
+  digitalWrite(11,LOW);
+  digitalWrite(12,LOW);
+}
+
+// the loop routine runs over and over again forever:
+void loop() 
+{
+  //position_Of_Digit(1);
+  clear_Display();
+
+
+}
+
+void clear_Display()
+{
+  digitalWrite(pinA,LOW);
+  digitalWrite(pinB,LOW);
+  digitalWrite(pinC,LOW);
+  digitalWrite(pinD,LOW);
+  digitalWrite(pinE,LOW);
+  digitalWrite(pinF,LOW);
+  digitalWrite(pinG,LOW);
+
+}
+
+void position_Of_Digit(int pos)
+{
+  switch(pos)
+  {
+    case 1:
+      {
+        digitalWrite(9,HIGH);
+        digitalWrite(10,LOW);
+        digitalWrite(11,LOW);
+        digitalWrite(12,LOW);
+      }
+      break;
+
+    case 2:
+      {
+        digitalWrite(9,LOW);
+        digitalWrite(10,HIGH);
+        digitalWrite(11,LOW);
+        digitalWrite(12,LOW);
+      }
+      break;
+
+    case 3:
+      {
+        digitalWrite(9,LOW);
+        digitalWrite(10,LOW);
+        digitalWrite(11,HIGH);
+        digitalWrite(12,LOW);
+      }
+      break;
+
+    case 4:
+      {
+        digitalWrite(9,LOW);
+        digitalWrite(10,LOW);
+        digitalWrite(11,LOW);
+        digitalWrite(12,HIGH);
+      }
+      break;
+    
+    default:
+      {
+        digitalWrite(9,HIGH);
+        digitalWrite(10,LOW);
+        digitalWrite(11,LOW);
+        digitalWrite(12,LOW);
+      }
+    
+  }
+
+
+}
+
+
+void printDigit(int digit)
+{
+    switch(digit)
+    {
+      case 0:
+        {
+          clear_Display();
+          delay(100);
+          digitalWrite(pinA,HIGH);
+          digitalWrite(pinB,HIGH);
+          digitalWrite(pinC,HIGH);
+          digitalWrite(pinD,HIGH);
+          digitalWrite(pinE,HIGH);
+          digitalWrite(pinF,HIGH);
+        }
+        break;
+      case 1:
+        {
+          clear_Display();
+          delay(100);
+          digitalWrite(pinB,HIGH);
+          digitalWrite(pinC,HIGH); 
+        }
+        break;
+      case 2:
+        {
+          clear_Display();
+          delay(100);
+          digitalWrite(pinA,HIGH);
+          digitalWrite(pinB,HIGH);
+          digitalWrite(pinD,HIGH);
+          digitalWrite(pinE,HIGH);
+          digitalWrite(pinG,HIGH);
+        }
+        break;
+      case 3:
+        {
+          clear_Display();
+          delay(100);
+          digitalWrite(pinA,HIGH);
+          digitalWrite(pinB,HIGH);
+          digitalWrite(pinC,HIGH);
+          digitalWrite(pinD,HIGH);
+          digitalWrite(pinG,HIGH);
+        }
+        break;
+      case 4:
+        {
+          clear_Display();
+          delay(100);
+          digitalWrite(pinB,HIGH);
+          digitalWrite(pinC,HIGH);
+          digitalWrite(pinF,HIGH);
+          digitalWrite(pinG,HIGH);
+        }   
+        break;
+      case 5:
+        {
+          clear_Display();
+          delay(100);
+          digitalWrite(pinA,HIGH);
+          digitalWrite(pinC,HIGH);
+          digitalWrite(pinD,HIGH);
+          digitalWrite(pinF,HIGH);
+          digitalWrite(pinG,HIGH);
+        }
+        break;
+      case 6:
+        {
+          clear_Display();
+          delay(100);
+          digitalWrite(pinA,HIGH);
+          digitalWrite(pinC,HIGH);
+          digitalWrite(pinD,HIGH);
+          digitalWrite(pinE,HIGH);
+          digitalWrite(pinF,HIGH);
+          digitalWrite(pinG,HIGH);
+        }
+        break;
+       case 7:
+        {
+          clear_Display();
+          delay(100);
+          digitalWrite(pinA,HIGH);
+          digitalWrite(pinB,HIGH);
+          digitalWrite(pinC,HIGH);
+        }
+        break;
+      case 8:
+        {
+          clear_Display();
+          delay(100);
+          digitalWrite(pinA,HIGH);
+          digitalWrite(pinB,HIGH);
+          digitalWrite(pinC,HIGH);
+          digitalWrite(pinD,HIGH);
+          digitalWrite(pinE,HIGH);
+          digitalWrite(pinF,HIGH);
+          digitalWrite(pinG,HIGH);
+        }
+        break;
+      case 9:
+        {
+          clear_Display();
+          delay(100);
+          digitalWrite(pinA,HIGH);
+          digitalWrite(pinB,HIGH);
+          digitalWrite(pinC,HIGH);
+          digitalWrite(pinD,HIGH);
+          digitalWrite(pinF,HIGH);
+          digitalWrite(pinG,HIGH);
+        }
+        break;
+      default:
+        {
+          clear_Display();
+          delay(100);
+          digitalWrite(pinA,HIGH);
+          digitalWrite(pinB,HIGH);
+          digitalWrite(pinC,HIGH);
+          digitalWrite(pinD,HIGH);
+          digitalWrite(pinE,HIGH);
+          digitalWrite(pinF,HIGH);
+        }
+    }
+
+}
+
+void printNumber_Decimal(int digit)
+{
+  
+}
