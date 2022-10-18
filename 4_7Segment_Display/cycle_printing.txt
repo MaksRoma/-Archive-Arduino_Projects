@@ -1,4 +1,5 @@
 // Pin 2-8 is connected to the 7 segments of the display.
+//My first program for testing displaying digits
 
 int pinA = 0;
 int pinB = 1;
