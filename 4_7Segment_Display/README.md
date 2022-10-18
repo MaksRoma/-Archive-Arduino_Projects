@@ -1,11 +1,5 @@
 # Version history
 v1:
-    cycle_printing
-    fff
     
-    ffff
-    f
+    cycle_printing: print digits to 7-segment display only using library functions
     
-    f
-    f
-    f
