@@ -1,7 +1,7 @@
 # Version history
 V2.2:
     
-    4_7Segment_Display.ino: final version (added printing many digits instead one)
+    4_7Segment_Display.ino: added printing many digits instead one
 
 V2.1:
     
