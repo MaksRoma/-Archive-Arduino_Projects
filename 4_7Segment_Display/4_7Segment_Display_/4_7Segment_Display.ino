@@ -2,7 +2,7 @@
 /*
         =====
        ||   ||
-       ||===|| = 7 Segent decoder (1 of 4 display)
+       ||===|| = 7 Segment decoder (1 of 4 display)
        ||   ||
         =====
           |
