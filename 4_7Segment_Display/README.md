@@ -1,7 +1,11 @@
 # Version history
+V2.2:
+    
+    4_7Segment_Display.ino: final version (added printing many digits instead one)
+
 V2.1:
     
-    4_7Segment_Display.ino: optimized version of print_Digits_Advanced.txt
+    Print_Digits_Advanced_V2.ino: optimized version of print_Digits_Advanced.txt
     
 V2.0:
 
